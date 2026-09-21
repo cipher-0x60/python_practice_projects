@@ -1,3 +1,6 @@
+
+# Newton School's basic python Problem 
+
 a = int(input("Please Tell Your Num_1:- "))
 b = int(input("Please Tell Your Num_2:- "))
 

@@ -7,8 +7,8 @@ from pathlib import Path
 def readFileAndFolder():
     path = Path('')
     items = list(path.rglob('*'))
-    for i, items in enumerate(items):
-        print(f"{i+1} :{items} ")
+    for i, item in enumerate(items):
+        print(f"{i+1} :{item} ")
 
 
 # Create File Function.
@@ -38,20 +38,57 @@ def read_file():
         p = Path(name)
         if p.exists() and p.is_file():
             with open(p, "r") as fs:
-                data = p.read()
+                data = fs.read()
                 print(data)
         else:
             print("The file does not exists")
 
     except Exception as err:
-        print("An Error Occured as {err}")   
+        print(f"An Error Occured as {err}")   
+
+
+def update_file():
+    try:
+       
+       readFileAndFolder()
+       name = input("Tell Which File You Want to Update:- ")
+       p = Path(name)
+       if p.exists() and p.is_file():
+            print("Press 1 for Changing the name of your file")
+            print("Press 2 for Oerwriting the file data")
+            print("Press 3 for Appendinig some content ini Your file")
+
+            res = int(input("Tell your Option:- "))
+            if res == 1:
+                name2 = input("tell you new file name:- ")
+                p2 = Path(name2)
+                p.rename(p2)
+            if res == 2:
+                with open(p, 'w') as fs:
+                    data = input("tell what you want ot write this will overwrite the data:- ")
+                    fs.write(data)
+            if res == 3:
+                with open(p, 'a') as fs:
+                    data = input("tell what you want ot write this will append the data:- ")
+                    fs.write(" "+data)
+    except Exception as err:
+        print(f"An error occured as {err}")
 
 
 
 
-
-
-
+def delete_file():
+    try:
+        readFileAndFolder()
+        name = input("Tell Which File Do you want to Delete:- ")
+        p = Path(name)
+        if p.exists() and p.is_file():
+            p.unlink()
+            print(f"Your File {name} on the path {p} has been deleted successfully" )
+        else:
+            print(f"Your Given File Name '{name}' Does not exists. Please Tell The Correct File Name. ")
+    except Exception as err:
+        print(f"An error Occured as {err}")
 
 
 
