@@ -10,8 +10,8 @@ opration = int(input("Please Tell Your Opreation:- "))
 
 def opration_checks():
     if opration < 1 or opration > 5:
-         print("Please Specify a Valid Operation")
-         exit()
+        print("Please Specify a Valid Operation")
+        exit()
 opration_checks()
 
 num_1 = int(input("Tell your First number:- "))
@@ -27,12 +27,12 @@ def substract_num(num_1,num_2):
 
 def divid_num(num_1,num_2):
     try:
-         result = num_1 / num_2 
-         print(f"division of your given number {num_1}, {num_2} is {result}")
+        result = num_1 / num_2 
+        print(f"division of your given number {num_1}, {num_2} is {result}")
     
     except Exception as err:
-         print(f"An error Occurred AS {err} ")
-         
+        print(f"An error Occurred AS {err} ")
+
 def multi_num(num_1,num_2):
     print(f"Multipication of Your Given Numbers {num_1}, {num_2} Is {num_1 * num_2} ")
 

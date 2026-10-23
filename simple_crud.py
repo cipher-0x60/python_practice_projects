@@ -49,28 +49,28 @@ def read_file():
 
 def update_file():
     try:
-       
-       readFileAndFolder()
-       name = input("Tell Which File You Want to Update:- ")
-       p = Path(name)
-       if p.exists() and p.is_file():
-            print("Press 1 for Changing the name of your file")
-            print("Press 2 for Oerwriting the file data")
-            print("Press 3 for Appendinig some content ini Your file")
+        
+        readFileAndFolder()
+        name = input("Tell Which File You Want to Update:- ")
+        p = Path(name)
+        if p.exists() and p.is_file():
+                print("Press 1 for Changing the name of your file")
+                print("Press 2 for Oerwriting the file data")
+                print("Press 3 for Appendinig some content ini Your file")
 
-            res = int(input("Tell your Option:- "))
-            if res == 1:
-                name2 = input("tell you new file name:- ")
-                p2 = Path(name2)
-                p.rename(p2)
-            if res == 2:
-                with open(p, 'w') as fs:
-                    data = input("tell what you want ot write this will overwrite the data:- ")
-                    fs.write(data)
-            if res == 3:
-                with open(p, 'a') as fs:
-                    data = input("tell what you want ot write this will append the data:- ")
-                    fs.write(" "+data)
+                res = int(input("Tell your Option:- "))
+                if res == 1:
+                    name2 = input("tell you new file name:- ")
+                    p2 = Path(name2)
+                    p.rename(p2)
+                if res == 2:
+                    with open(p, 'w') as fs:
+                        data = input("tell what you want ot write this will overwrite the data:- ")
+                        fs.write(data)
+                if res == 3:
+                    with open(p, 'a') as fs:
+                        data = input("tell what you want ot write this will append the data:- ")
+                        fs.write(" "+data)
     except Exception as err:
         print(f"An error occured as {err}")
 
